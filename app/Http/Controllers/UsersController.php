@@ -8,6 +8,11 @@ use App\Models\Secondary\User;
 
 class UsersController extends Controller
 {
+    public function dashboard()
+    {
+        return Inertia::render('Dashboard');
+    }
+
     public function users()
     {
         return Inertia::render('Users', ['data' => (new User())->get()]);
