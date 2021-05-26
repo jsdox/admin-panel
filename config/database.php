@@ -63,6 +63,16 @@ return [
             ]) : [],
         ],
 
+        'secondary' => [
+            'driver' => 'pgsql',
+            'url' => env('DATABASE2_URL'),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
