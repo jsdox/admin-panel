@@ -12,7 +12,6 @@ class UsersController extends Controller
     {
         $obj = new User();
         $data = $obj->get();
-        // return Inertia::render('Users', $data);
         return Inertia::render('Users', ['data' => $data]);
     }
 }
