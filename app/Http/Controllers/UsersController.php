@@ -17,4 +17,9 @@ class UsersController extends Controller
     {
         return Inertia::render('Users', ['data' => (new User())->get()]);
     }
+
+    public function get(int $id)
+    {
+        return Inertia::render('UserDetail', ['data' => $id]);
+    }
 }
