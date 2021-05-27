@@ -12,6 +12,7 @@
     "devDependencies": {
         "@babel/preset-react": "^7.13.13",
         "@headlessui/react": "^1.2.0",
+        "@iconify/react": "^1.1.4",
         "@inertiajs/inertia": "^0.8.4",
         "@inertiajs/inertia-react": "^0.5.12",
         "@inertiajs/progress": "^0.2.4",
@@ -25,5 +26,9 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "tailwindcss": "^2.1.2"
+    },
+    "dependencies": {
+        "@heroicons/react": "^1.0.1",
+        "react-router-dom": "^5.2.0"
     }
 }
