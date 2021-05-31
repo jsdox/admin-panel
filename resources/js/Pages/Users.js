@@ -31,7 +31,10 @@ import { InertiaLink } from '@inertiajs/inertia-react';
 import { Link } from 'react-router-dom';
 
 export default function Users(props) {
-    const people = props.data;
+    console.log(props);
+    const people = props.data.data;
+    const next_page_url = props.data.next_page_url;
+    const prev_page_url = props.data.prev_page_url;
     return (
         <Sidebar>
            <main className="flex-1 relative overflow-y-auto focus:outline-none">
@@ -94,6 +97,34 @@ export default function Users(props) {
                                             ))}
                                         </tbody>
                                         </table>
+
+                                        <nav
+                                                className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
+                                                aria-label="Pagination"
+                                                >
+                                                {/* <div className="hidden sm:block">
+                                                    <p className="text-sm text-gray-700">
+                                                    Showing <span className="font-medium">1</span> to <span className="font-medium">10</span> of{' '}
+                                                    <span className="font-medium">20</span> results
+                                                    </p>
+                                                </div> */}
+                                                <div className="flex-1 flex justify-between sm:justify-end">
+                                                    {(prev_page_url) && 
+                                                     <InertiaLink
+                                                        className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+                                                        method="get"
+                                                        href={prev_page_url}>Previous
+                                                    </InertiaLink>
+                                                    }                                                   
+                                                    {(next_page_url) && 
+                                                    <InertiaLink
+                                                        className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+                                                        method="get"
+                                                        href={next_page_url}>Next
+                                                    </InertiaLink>
+                                                    }
+                                                </div>
+                                                </nav>
                                     </div>
                                     </div>
                                 </div>

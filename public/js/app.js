@@ -23980,7 +23980,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Users(props) {
-  var people = props.data;
+  console.log(props);
+  var people = props.data.data;
+  var next_page_url = props.data.next_page_url;
+  var prev_page_url = props.data.prev_page_url;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("main", {
       className: "flex-1 relative overflow-y-auto focus:outline-none",
@@ -24002,9 +24005,9 @@ function Users(props) {
                 className: "-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                   className: "py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
                     className: "shadow overflow-hidden border-b border-gray-200 sm:rounded-lg",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
                       className: "min-w-full divide-y divide-gray-200",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
                         className: "bg-gray-50",
@@ -24064,7 +24067,24 @@ function Users(props) {
                           }, person.id);
                         })
                       })]
-                    })
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("nav", {
+                      className: "bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6",
+                      "aria-label": "Pagination",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                        className: "flex-1 flex justify-between sm:justify-end",
+                        children: [prev_page_url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                          className: "ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50",
+                          method: "get",
+                          href: prev_page_url,
+                          children: "Previous"
+                        }), next_page_url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                          className: "ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50",
+                          method: "get",
+                          href: next_page_url,
+                          children: "Next"
+                        })]
+                      })
+                    })]
                   })
                 })
               })

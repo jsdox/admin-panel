@@ -44,6 +44,6 @@ class User extends Authenticatable
 
     public function get()
     {
-        return $this->on($this->connection)->get();
+        return $this->on($this->connection)->paginate(15);
     }
 }
