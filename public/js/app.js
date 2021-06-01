@@ -23029,7 +23029,7 @@ function Example(_ref) {
       setSidebarOpen = _useState2[1];
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-    className: "h-screen flex overflow-hidden bg-gray-100",
+    className: "flex bg-gray-100",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_1__.Transition.Root, {
       show: sidebarOpen,
       as: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
@@ -23929,6 +23929,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function UserDetail(props) {
+  var user = props.data[0];
+  console.log(user);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "bg-white shadow overflow-hidden sm:rounded-lg",
@@ -23950,9 +23952,9 @@ function UserDetail(props) {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dt", {
               className: "text-sm font-medium text-gray-500",
               children: "Full name"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dd", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("dd", {
               className: "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
-              children: "Margot Foster"
+              children: [user.name, " ", user.last_name]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
@@ -23961,7 +23963,7 @@ function UserDetail(props) {
               children: "Phone number"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dd", {
               className: "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
-              children: "Backend Developer"
+              children: user.phone_number
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
@@ -23970,7 +23972,7 @@ function UserDetail(props) {
               children: "Email address"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dd", {
               className: "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
-              children: "margotfoster@example.com"
+              children: user.email
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
@@ -23979,7 +23981,7 @@ function UserDetail(props) {
               children: "D.O.B"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dd", {
               className: "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
-              children: "$120,000"
+              children: user.dob
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
@@ -23988,7 +23990,7 @@ function UserDetail(props) {
               children: "Gender"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dd", {
               className: "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
-              children: "$120,000"
+              children: user.gender
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
@@ -23997,7 +23999,7 @@ function UserDetail(props) {
               children: "Status"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dd", {
               className: "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
-              children: "$120,000"
+              children: user.status == 1 ? 'Active' : 'Reported'
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
@@ -24006,7 +24008,7 @@ function UserDetail(props) {
               children: "ELO score"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dd", {
               className: "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
-              children: "$120,000"
+              children: user.elo_score
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
@@ -24015,7 +24017,16 @@ function UserDetail(props) {
               children: "Paused"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dd", {
               className: "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
-              children: "$120,000"
+              children: user.paused
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dt", {
+              className: "text-sm font-medium text-gray-500",
+              children: "Address"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("dd", {
+              className: "mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2",
+              children: user.get_address ? user.get_address.get_city.city + ' / ' + user.get_address.get_country.country : ''
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6",

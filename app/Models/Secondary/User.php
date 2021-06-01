@@ -42,14 +42,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function get()
+    public function get(): object
     {
-        return $this->on($this->connection)->paginate(15);
+        return $this->on($this->connection)
+            ->where('type', 1)
+            ->paginate(15);
     }
 
-    public function getProfile(int $id)
+    public function getProfile(int $id): object
     {
-        return $this->where('id', $id)->get();
+        return $this->where('id', $id)
+            ->with(['getAddress.getCity', 'getAddress.getCountry'])
+            ->get();
+    }
 
+    public function getAddress()
+    {
+        return $this->hasOne(Address::class);
     }
 }
