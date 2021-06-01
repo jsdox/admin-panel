@@ -8,6 +8,13 @@ use App\Models\Secondary\User;
 
 class UsersController extends Controller
 {
+    private $user;
+    
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
     public function dashboard()
     {
         return Inertia::render('Dashboard');
@@ -18,8 +25,8 @@ class UsersController extends Controller
         return Inertia::render('Users', ['data' => (new User())->get()]);
     }
 
-    public function get(int $id)
+    public function getProfile(int $id)
     {
-        return Inertia::render('UserDetail', ['data' => $id]);
+        return Inertia::render('UserDetail', ['data' => $this->user->getProfile($id)]);
     }
 }

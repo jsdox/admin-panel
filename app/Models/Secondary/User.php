@@ -46,4 +46,10 @@ class User extends Authenticatable
     {
         return $this->on($this->connection)->paginate(15);
     }
+
+    public function getProfile(int $id)
+    {
+        return $this->where('id', $id)->get();
+
+    }
 }
