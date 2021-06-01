@@ -38,6 +38,7 @@ export default function Example({ auth, header, children }) {
 
   return (
     <div className="flex bg-gray-100">
+      {/* <div className="h-screen flex overflow-hidden bg-gray-100"> */}
       <Transition.Root show={sidebarOpen} as={Fragment}>
         <Dialog
           as="div"
