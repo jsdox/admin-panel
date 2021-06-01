@@ -52,12 +52,17 @@ class User extends Authenticatable
     public function getProfile(int $id): object
     {
         return $this->where('id', $id)
-            ->with(['getAddress.getCity', 'getAddress.getCountry'])
+            ->with(['getAddress.getCity', 'getAddress.getCountry', 'getImages'])
             ->get();
     }
 
     public function getAddress()
     {
         return $this->hasOne(Address::class);
+    }
+
+    public function getImages()
+    {
+        return $this->hasmany(Image::class);
     }
 }
