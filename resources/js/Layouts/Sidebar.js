@@ -37,7 +37,7 @@ export default function Example({ auth, header, children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="h-screen flex overflow-hidden bg-gray-100">
+    <div className="flex bg-gray-100">
       <Transition.Root show={sidebarOpen} as={Fragment}>
         <Dialog
           as="div"
