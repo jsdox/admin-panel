@@ -22,7 +22,6 @@ import NavLink from '../Components/NavLink';
 export default function UserDetail(props) {
 
     const user = props.data[0];
-    console.log(user);
     const tabs = [
         { name: 'Profile', href: "/users/" + user.id,  current: true },
         { name: 'Perfect match Q/A', href: '/perfect-match/' + user.id, current: false },
@@ -32,7 +31,6 @@ export default function UserDetail(props) {
         { name: 'Disc queue', href: '/dic-queue/' + user.id, count: '20', current: false },
         { name: 'Disc profile', href: '/dic-profile/' + user.id, count: '6', current: false },
       ];
-console.log(tabs);
     return (
         <Sidebar>
             <div className="bg-white shadow overflow-hidden sm:rounded-lg">
