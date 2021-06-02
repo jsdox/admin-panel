@@ -3,15 +3,8 @@ import React from 'react';
 import { InertiaLink } from '@inertiajs/inertia-react';
 import { Link } from 'react-router-dom';
 import { PaperClipIcon } from '@heroicons/react/solid'
-const tabs = [
-    { name: 'Profile', href: '#',  current: true },
-    { name: 'Perfect match Q/A', href: '#', current: false },
-    { name: 'About Q/A', href: '#', current: false },
-    { name: 'Bio Q/A', href: '#', current: false },
-    { name: 'Life style Q/A', href: '#', current: false },
-    { name: 'Disc queue', href: '#', count: '20', current: false },
-    { name: 'Disc profile', href: '#', count: '6', current: false },
-  ]
+import NavLink from '../Components/NavLink';
+
 
   const actual_gender = [
     { id: 1, name: 'Non binary'},
@@ -27,8 +20,19 @@ const tabs = [
     return classes.filter(Boolean).join(' ')
   }
 export default function UserDetail(props) {
+
     const user = props.data[0];
     console.log(user);
+    const tabs = [
+        { name: 'Profile', href: "/users/" + user.id,  current: true },
+        { name: 'Perfect match Q/A', href: '/perfect-match/' + user.id, current: false },
+        { name: 'About Q/A', href: '/about/' + user.id, current: false },
+        { name: 'Bio Q/A', href: '/bio/' + user.id, current: false },
+        { name: 'Life style Q/A', href: '/life-style/' + user.id, current: false },
+        { name: 'Disc queue', href: '/dic-queue/' + user.id, count: '20', current: false },
+        { name: 'Disc profile', href: '/dic-profile/' + user.id, count: '6', current: false },
+      ];
+console.log(tabs);
     return (
         <Sidebar>
             <div className="bg-white shadow overflow-hidden sm:rounded-lg">
@@ -42,23 +46,25 @@ export default function UserDetail(props) {
                         Select a tab
                         </label>
                         <select
-                        id="tabs"
-                        name="tabs"
-                        className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-                        defaultValue={tabs.find((tab) => tab.current).name}
-                        >
-                        {tabs.map((tab) => (
-                            <option key={tab.name}>{tab.name}</option>
-                        ))}
+                            id="tabs"
+                            name="tabs"
+                            className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                            defaultValue={tabs.find((tab) => tab.current).name}
+                            >
+                            {tabs.map((tab) => (
+                                <option key={tab.name} href={route('dashboard')}>
+                                    {tab.name}
+                                </option>
+                            ))}
                         </select>
                     </div>
                     <div className="hidden sm:block">
                         <div className="border-b border-gray-200">
                         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                             {tabs.map((tab) => (
-                            <a
+                            <NavLink
                                 key={tab.name}
-                                href="#"
+                                href={tab.href}
                                 className={classNames(
                                 tab.current
                                     ? 'border-indigo-500 text-indigo-600'
@@ -78,7 +84,7 @@ export default function UserDetail(props) {
                                     {tab.count}
                                 </span>
                                 ) : null}
-                            </a>
+                            </NavLink>
                             ))}
                         </nav>
                         </div>
@@ -110,7 +116,7 @@ export default function UserDetail(props) {
                                 }
                             </dd>
                         </div>
-                        
+
                         <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-medium text-gray-500">Status</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{(user.status == 1 ? 'Active' : 'Reported')}</dd>
@@ -127,7 +133,7 @@ export default function UserDetail(props) {
                             <dt className="text-sm font-medium text-gray-500">Headline</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{user.headline}</dd>
                         </div>
-                        
+
                         <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-medium text-gray-500">Paused</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{(user.paused) ? 'Yes' : 'No'}</dd>
@@ -190,7 +196,7 @@ export default function UserDetail(props) {
                 </div>
             </div>
 
-            
+
 
         </Sidebar>
     );
