@@ -9,7 +9,7 @@ use App\Models\Secondary\User;
 class UsersController extends Controller
 {
     private $user;
-    
+
     public function __construct(User $user)
     {
         $this->user = $user;

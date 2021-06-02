@@ -3,7 +3,10 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\{
+    UsersController,
+    UserAnswerController
+};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,5 +38,6 @@ Route::get('/dashboard', [UsersController::class, 'dashboard'])->middleware(['au
 
 Route::get('/users', [UsersController::class, 'users'])->middleware(['auth', 'verified'])->name('users');
 Route::get('/users/{id}', [UsersController::class, 'getProfile'])->middleware(['auth', 'verified'])->name('get-user-profile');
+Route::get('/perfect-match/{id}', [UserAnswerController::class, 'getAnswers'])->middleware(['auth', 'verified'])->name('get-perfect-match-qa');
 
 require __DIR__.'/auth.php';
