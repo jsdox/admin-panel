@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
+    protected $connection = 'secondary';
     use HasFactory;
 }
