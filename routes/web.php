@@ -6,7 +6,8 @@ use Inertia\Inertia;
 use App\Http\Controllers\{
     UsersController,
     UserAnswerController,
-    AboutAnswersController
+    AboutAnswersController,
+    BioAnswersController
 };
 /*
 |--------------------------------------------------------------------------
@@ -28,18 +29,11 @@ Route::get('/', function () {
     ]);
 });
 
-// Route::get('/dashboard', function () {
-//     return Inertia::render('Dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::get('/users', function () {
-//     return Inertia::render('Users');
-// })->middleware(['auth', 'verified'])->name('users');
 Route::get('/dashboard', [UsersController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/users', [UsersController::class, 'users'])->middleware(['auth', 'verified'])->name('users');
 Route::get('/users/{id}', [UsersController::class, 'getProfile'])->middleware(['auth', 'verified'])->name('get-user-profile');
 Route::get('/perfect-match/{id}', [UserAnswerController::class, 'getAnswers'])->middleware(['auth', 'verified'])->name('get-perfect-match-qa');
 Route::get('/about/{id}', [AboutAnswersController::class, 'get'])->middleware(['auth', 'verified'])->name('get-about-qa');
+Route::get('/bio/{id}', [BioAnswersController::class, 'get'])->middleware(['auth', 'verified'])->name('get-about-qa');
 
 require __DIR__.'/auth.php';
