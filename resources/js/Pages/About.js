@@ -8,7 +8,6 @@ import { PaperClipIcon } from '@heroicons/react/solid'
 
 export default function About(props) {
     const data = props.data;
-    console.log(data);
     return (
         <Sidebar>
             <div className="bg-white shadow overflow-hidden sm:rounded-lg">
