@@ -38,6 +38,7 @@ export default function DiscQueue(props) {
                                                 Compatability Score
                                             </th>
                                             </tr>
+
                                         </thead>
                                         <tbody>
                                             {people.map((person, personIdx) => (
