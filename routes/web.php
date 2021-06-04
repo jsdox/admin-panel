@@ -9,7 +9,8 @@ use App\Http\Controllers\{
     AboutAnswersController,
     BioAnswersController,
     LifestyleAnswersController,
-    DiscoveryQueuesController
+    DiscoveryQueuesController,
+    DiscoveryProfilesController
 };
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +40,6 @@ Route::get('/about/{id}', [AboutAnswersController::class, 'get'])->middleware(['
 Route::get('/bio/{id}', [BioAnswersController::class, 'get'])->middleware(['auth', 'verified'])->name('get-about-qa');
 Route::get('/life-style/{id}', [LifestyleAnswersController::class, 'get'])->middleware(['auth', 'verified'])->name('get-lifestyle-qa');
 Route::get('/dic-queue/{id}', [DiscoveryQueuesController::class, 'get'])->middleware(['auth', 'verified'])->name('get-disc-queue');
+Route::get('/dic-profile/{id}', [DiscoveryProfilesController::class, 'get'])->middleware(['auth', 'verified'])->name('get-disc-profile');
 
 require __DIR__.'/auth.php';
