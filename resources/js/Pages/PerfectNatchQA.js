@@ -9,6 +9,7 @@ import { PaperClipIcon } from '@heroicons/react/solid'
 export default function UserDetail(props) {
 
     const question_answer = props.data;
+    let lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1)
 
     return (
         <Sidebar>
@@ -16,6 +17,12 @@ export default function UserDetail(props) {
             <div className="px-4 py-5 sm:px-6">
                 <h3 className="text-lg leading-6 font-medium text-gray-900">Perfect Match Question and Answers</h3>
                 <p className="mt-1 max-w-2xl text-sm text-gray-500"></p>
+                <p className="mt-1 max-w-2xl text-sm text-gray-500">
+                    <InertiaLink method="get" href={route('users')+'/'+lastItem}>
+                        <strong><u>Back</u></strong>
+                    </InertiaLink>
+                </p>
+
             </div>
             {(question_answer[0]) &&
                 <div className="border-t border-gray-200">

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { PaperClipIcon } from '@heroicons/react/solid'
 import NavLink from '../Components/NavLink';
 
+import { useHistory } from "react-router-dom";
 
   const actual_gender = [
     { id: 1, name: 'Non binary'},
@@ -19,6 +20,9 @@ import NavLink from '../Components/NavLink';
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
+  let styles = {
+    paddingLeft: '22px',
+  };
 export default function UserDetail(props) {
 
     const user = props.data[0];
@@ -28,8 +32,8 @@ export default function UserDetail(props) {
         { name: 'About Q/A', href: '/about/' + user.id, current: false },
         { name: 'Bio Q/A', href: '/bio/' + user.id, current: false },
         { name: 'Life style Q/A', href: '/life-style/' + user.id, current: false },
-        { name: 'Disc queue', href: '/dic-queue/' + user.id, count: '20', current: false },
-        { name: 'Disc profile', href: '/dic-profile/' + user.id, count: '6', current: false },
+        { name: 'Disc queue', href: '/dic-queue/' + user.id, count: '', current: false },
+        { name: 'Disc profile', href: '/dic-profile/' + user.id, count: '', current: false },
       ];
     return (
         <Sidebar>
@@ -37,6 +41,11 @@ export default function UserDetail(props) {
                 <div className="px-4 py-5 sm:px-6">
                     <h3 className="text-lg leading-6 font-medium text-gray-900">User Information</h3>
                     <p className="mt-1 max-w-2xl text-sm text-gray-500">Personal details and other.</p>
+                    <p className="mt-1 max-w-2xl text-sm text-gray-500">
+                        <InertiaLink method="get" href={route('users')}>
+                            <strong><u>Back</u></strong>
+                        </InertiaLink>
+                    </p>
                 </div>
                 <div>
                     <div className="sm:hidden">
@@ -56,7 +65,7 @@ export default function UserDetail(props) {
                             ))}
                         </select>
                     </div>
-                    <div className="hidden sm:block">
+                    <div className="hidden sm:block" style={styles}>
                         <div className="border-b border-gray-200">
                         <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                             {tabs.map((tab) => (

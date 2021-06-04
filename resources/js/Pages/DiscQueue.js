@@ -7,12 +7,16 @@ export default function DiscQueue(props) {
     const people = props.data.data;
     const next_page_url = props.data.next_page_url;
     const prev_page_url = props.data.prev_page_url;
+    let lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1)
     return (
         <Sidebar>
            <main className="flex-1 relative overflow-y-auto focus:outline-none">
                 <div className="py-6">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
                     <h1 className="text-2xl font-semibold text-gray-900">Discovery Queues({props.data.total})</h1>
+                    <InertiaLink method="get" href={route('users')+'/'+lastItem}>
+                        <strong><u>Back</u></strong>
+                    </InertiaLink>
                     </div>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
                         {/* Replace with your content */}

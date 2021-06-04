@@ -4,13 +4,19 @@ import { InertiaLink } from '@inertiajs/inertia-react';
 import { Link } from 'react-router-dom';
 
 export default function DiscProfile(props) {
+
+    let lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1)
     const people = props.data;
     return (
         <Sidebar>
            <main className="flex-1 relative overflow-y-auto focus:outline-none">
+
                 <div className="py-6">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
                     <h1 className="text-2xl font-semibold text-gray-900">Discovery Queues({people.length})</h1>
+                    <InertiaLink method="get" href={route('users')+'/'+lastItem}>
+                        <strong><u>Back</u></strong>
+                    </InertiaLink>
                     </div>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
                         {/* Replace with your content */}
