@@ -23275,6 +23275,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function About(props) {
   var data = props.data;
+  var lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "bg-white shadow overflow-hidden sm:rounded-lg",
@@ -23285,6 +23286,17 @@ function About(props) {
           children: "About Question and Answers"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: "mt-1 max-w-2xl text-sm text-gray-500"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "mt-1 max-w-2xl text-sm text-gray-500",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            method: "get",
+            href: route('users') + '/' + lastItem,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("u", {
+                children: "Back"
+              })
+            })
+          })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "border-t border-gray-200",
@@ -23946,6 +23958,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Bio(props) {
   var data = props.data;
+  var lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "bg-white shadow overflow-hidden sm:rounded-lg",
@@ -23956,6 +23969,17 @@ function Bio(props) {
           children: "About Question and Answers"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: "mt-1 max-w-2xl text-sm text-gray-500"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "mt-1 max-w-2xl text-sm text-gray-500",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            method: "get",
+            href: route('users') + '/' + lastItem,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("u", {
+                children: "Back"
+              })
+            })
+          })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "border-t border-gray-200",
@@ -24062,18 +24086,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function DiscProfile(props) {
+  var lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
   var people = props.data;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("main", {
       className: "flex-1 relative overflow-y-auto focus:outline-none",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "py-6",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "max-w-7xl mx-auto px-4 sm:px-6 md:px-8",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
             className: "text-2xl font-semibold text-gray-900",
             children: ["Discovery Queues(", people.length, ")"]
-          })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            method: "get",
+            href: route('users') + '/' + lastItem,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("u", {
+                children: "Back"
+              })
+            })
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "max-w-7xl mx-auto px-4 sm:px-6 md:px-8",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -24164,17 +24197,26 @@ function DiscQueue(props) {
   var people = props.data.data;
   var next_page_url = props.data.next_page_url;
   var prev_page_url = props.data.prev_page_url;
+  var lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("main", {
       className: "flex-1 relative overflow-y-auto focus:outline-none",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "py-6",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "max-w-7xl mx-auto px-4 sm:px-6 md:px-8",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
             className: "text-2xl font-semibold text-gray-900",
             children: ["Discovery Queues(", props.data.total, ")"]
-          })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            method: "get",
+            href: route('users') + '/' + lastItem,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("u", {
+                children: "Back"
+              })
+            })
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "max-w-7xl mx-auto px-4 sm:px-6 md:px-8",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -24282,6 +24324,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function LifeStyle(props) {
   var data = props.data;
+  var lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "bg-white shadow overflow-hidden sm:rounded-lg",
@@ -24292,6 +24335,17 @@ function LifeStyle(props) {
           children: "About Question and Answers"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: "mt-1 max-w-2xl text-sm text-gray-500"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "mt-1 max-w-2xl text-sm text-gray-500",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            method: "get",
+            href: route('users') + '/' + lastItem,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("u", {
+                children: "Back"
+              })
+            })
+          })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "border-t border-gray-200",
@@ -24358,6 +24412,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function UserDetail(props) {
   var question_answer = props.data;
+  var lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "bg-white shadow overflow-hidden sm:rounded-lg",
@@ -24368,6 +24423,17 @@ function UserDetail(props) {
           children: "Perfect Match Question and Answers"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           className: "mt-1 max-w-2xl text-sm text-gray-500"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "mt-1 max-w-2xl text-sm text-gray-500",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            method: "get",
+            href: route('users') + '/' + lastItem,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("u", {
+                children: "Back"
+              })
+            })
+          })
         })]
       }), question_answer[0] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "border-t border-gray-200",
@@ -24433,6 +24499,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var actual_gender = [{
   id: 1,
   name: 'Non binary'
@@ -24467,6 +24534,9 @@ function classNames() {
   return classes.filter(Boolean).join(' ');
 }
 
+var styles = {
+  paddingLeft: '22px'
+};
 function UserDetail(props) {
   var user = props.data[0];
   var tabs = [{
@@ -24492,12 +24562,12 @@ function UserDetail(props) {
   }, {
     name: 'Disc queue',
     href: '/dic-queue/' + user.id,
-    count: '20',
+    count: '',
     current: false
   }, {
     name: 'Disc profile',
     href: '/dic-profile/' + user.id,
-    count: '6',
+    count: '',
     current: false
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
@@ -24511,6 +24581,17 @@ function UserDetail(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
           className: "mt-1 max-w-2xl text-sm text-gray-500",
           children: "Personal details and other."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
+          className: "mt-1 max-w-2xl text-sm text-gray-500",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            method: "get",
+            href: route('users'),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("strong", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("u", {
+                children: "Back"
+              })
+            })
+          })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -24535,6 +24616,7 @@ function UserDetail(props) {
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "hidden sm:block",
+          style: styles,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "border-b border-gray-200",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("nav", {
