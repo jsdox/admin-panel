@@ -10,7 +10,8 @@ use App\Http\Controllers\{
     BioAnswersController,
     LifestyleAnswersController,
     DiscoveryQueuesController,
-    DiscoveryProfilesController
+    DiscoveryProfilesController,
+    LikesController
 };
 /*
 |--------------------------------------------------------------------------
