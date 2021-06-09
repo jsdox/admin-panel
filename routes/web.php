@@ -11,7 +11,8 @@ use App\Http\Controllers\{
     LifestyleAnswersController,
     DiscoveryQueuesController,
     DiscoveryProfilesController,
-    LikesController
+    LikesController,
+    SlotsController
 };
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,7 @@ Route::get('/life-style/{id}', [LifestyleAnswersController::class, 'get'])->midd
 Route::get('/disc-queue/{id}', [DiscoveryQueuesController::class, 'get'])->middleware(['auth', 'verified'])->name('get-disc-queue');
 Route::get('/disc-profile/{id}', [DiscoveryProfilesController::class, 'get'])->middleware(['auth', 'verified'])->name('get-disc-profile');
 Route::get('/dics-liked/{id}', [LikesController::class, 'get'])->middleware(['auth', 'verified'])->name('get-disc-liked');
+Route::get('/conversation/{id}', [SlotsController::class, 'get'])->middleware(['auth', 'verified'])->name('converstation');
 
 
 require __DIR__.'/auth.php';
