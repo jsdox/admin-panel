@@ -23301,6 +23301,107 @@ function About(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/ActiveConversation.js":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/ActiveConversation.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ActiveConversation)
+/* harmony export */ });
+/* harmony import */ var _Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Sidebar */ "./resources/js/Layouts/Sidebar.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function ActiveConversation(props) {
+  var lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
+  var people = props.data;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("main", {
+      className: "flex-1 relative overflow-y-auto focus:outline-none",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "py-6",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "max-w-7xl mx-auto px-4 sm:px-6 md:px-8",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+            className: "text-2xl font-semibold text-gray-900",
+            children: ["Active conversation(", people.length, ")"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            method: "get",
+            href: route('users') + '/' + lastItem,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("u", {
+                children: "Back"
+              })
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "max-w-7xl mx-auto px-4 sm:px-6 md:px-8",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "py-4",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "flex flex-col",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                    className: "shadow overflow-hidden border-b border-gray-200 sm:rounded-lg",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+                      className: "min-w-full divide-y divide-gray-200",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
+                        className: "bg-gray-50",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tr", {
+                          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                            scope: "col",
+                            className: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider",
+                            children: "Name"
+                          })
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
+                        children: people.map(function (person, personIdx) {
+                          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+                            className: personIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50',
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("td", {
+                              className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900",
+                              children: [person.get_liked_users_profile.name, " ", person.get_liked_users_profile.last_name]
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("td", {
+                              className: "px-6 py-4 whitespace-nowrap text-right text-sm font-medium",
+                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+                                href: route('users'),
+                                className: "text-indigo-600 hover:text-indigo-900"
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                                method: "get",
+                                href: route('users') + '/' + person.profile_id,
+                                children: "View"
+                              })]
+                            })]
+                          }, person.profile_id);
+                        })
+                      })]
+                    })
+                  })
+                })
+              })
+            })
+          })
+        })]
+      })
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Auth/ConfirmPassword.js":
 /*!****************************************************!*\
   !*** ./resources/js/Pages/Auth/ConfirmPassword.js ***!
@@ -76625,6 +76726,8 @@ module.exports = function getSideChannel() {
 var map = {
 	"./About": "./resources/js/Pages/About.js",
 	"./About.js": "./resources/js/Pages/About.js",
+	"./ActiveConversation": "./resources/js/Pages/ActiveConversation.js",
+	"./ActiveConversation.js": "./resources/js/Pages/ActiveConversation.js",
 	"./Auth/ConfirmPassword": "./resources/js/Pages/Auth/ConfirmPassword.js",
 	"./Auth/ConfirmPassword.js": "./resources/js/Pages/Auth/ConfirmPassword.js",
 	"./Auth/ForgotPassword": "./resources/js/Pages/Auth/ForgotPassword.js",
