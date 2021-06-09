@@ -22969,36 +22969,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var navigation = [{
-  name: 'Dashboard',
-  href: '#',
+  name: 'Users',
+  href: '/users/',
   icon: _heroicons_react_outline__WEBPACK_IMPORTED_MODULE_3__.HomeIcon,
   current: true
-}, {
-  name: 'Team',
-  href: '#',
-  icon: _heroicons_react_outline__WEBPACK_IMPORTED_MODULE_3__.UsersIcon,
-  current: false
-}, {
-  name: 'Projects',
-  href: '#',
-  icon: _heroicons_react_outline__WEBPACK_IMPORTED_MODULE_3__.FolderIcon,
-  current: false
-}, {
-  name: 'Calendar',
-  href: '#',
-  icon: _heroicons_react_outline__WEBPACK_IMPORTED_MODULE_3__.CalendarIcon,
-  current: false
-}, {
-  name: 'Documents',
-  href: '#',
-  icon: _heroicons_react_outline__WEBPACK_IMPORTED_MODULE_3__.InboxIcon,
-  current: false
-}, {
-  name: 'Reports',
-  href: '#',
-  icon: _heroicons_react_outline__WEBPACK_IMPORTED_MODULE_3__.ChartBarIcon,
-  current: false
-}];
+} //   { name: 'Team', href: '#', icon: UsersIcon, current: false },
+//   { name: 'Projects', href: '#', icon: FolderIcon, current: false },
+//   { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
+//   { name: 'Documents', href: '#', icon: InboxIcon, current: false },
+//   { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
+];
 var userNavigation = [{
   name: 'Your Profile',
   href: '#'
@@ -24387,6 +24367,133 @@ function LifeStyle(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Likes.js":
+/*!*************************************!*\
+  !*** ./resources/js/Pages/Likes.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Likes)
+/* harmony export */ });
+/* harmony import */ var _Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Sidebar */ "./resources/js/Layouts/Sidebar.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function Likes(props) {
+  var people = props.data.data;
+  var next_page_url = props.data.next_page_url;
+  var prev_page_url = props.data.prev_page_url;
+  var lastItem = location.pathname.substring(location.pathname.lastIndexOf('/') + 1);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Layouts_Sidebar__WEBPACK_IMPORTED_MODULE_0__.default, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("main", {
+      className: "flex-1 relative overflow-y-auto focus:outline-none",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "py-6",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "max-w-7xl mx-auto px-4 sm:px-6 md:px-8",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h1", {
+            className: "text-2xl font-semibold text-gray-900",
+            children: ["Likes on discovery(", props.data.total, ")"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+            method: "get",
+            href: route('users') + '/' + lastItem,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("u", {
+                children: "Back"
+              })
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "max-w-7xl mx-auto px-4 sm:px-6 md:px-8",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "py-4",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "flex flex-col",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                  className: "py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                    className: "shadow overflow-hidden border-b border-gray-200 sm:rounded-lg",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+                      className: "min-w-full divide-y divide-gray-200",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
+                        className: "bg-gray-50",
+                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                            scope: "col",
+                            className: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider",
+                            children: "Name"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                            scope: "col",
+                            className: "px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider",
+                            children: "Data source"
+                          })]
+                        })
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
+                        children: people.map(function (person, personIdx) {
+                          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+                            className: personIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50',
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("td", {
+                              className: "px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900",
+                              children: [person.get_liked_users_profile.name, " ", person.get_liked_users_profile.last_name]
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                              className: "px-6 py-4 whitespace-nowrap text-sm text-gray-500",
+                              children: person.data_source
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("td", {
+                              className: "px-6 py-4 whitespace-nowrap text-right text-sm font-medium",
+                              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+                                href: route('users'),
+                                className: "text-indigo-600 hover:text-indigo-900"
+                              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                                method: "get",
+                                href: route('users') + '/' + person.profile_id,
+                                children: "View"
+                              })]
+                            })]
+                          }, person.profile_id);
+                        })
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("nav", {
+                      className: "bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6",
+                      "aria-label": "Pagination",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                        className: "flex-1 flex justify-between sm:justify-end",
+                        children: [prev_page_url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                          className: "ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50",
+                          method: "get",
+                          href: prev_page_url,
+                          children: "Previous"
+                        }), next_page_url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.InertiaLink, {
+                          className: "ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50",
+                          method: "get",
+                          href: next_page_url,
+                          children: "Next"
+                        })]
+                      })
+                    })]
+                  })
+                })
+              })
+            })
+          })
+        })]
+      })
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Pages/PerfectNatchQA.js":
 /*!**********************************************!*\
   !*** ./resources/js/Pages/PerfectNatchQA.js ***!
@@ -24560,13 +24667,23 @@ function UserDetail(props) {
     href: '/life-style/' + user.id,
     current: false
   }, {
+    name: 'Liked on Discovery',
+    href: '/dics-liked/' + user.id,
+    count: '',
+    current: false
+  }, {
     name: 'Disc queue',
-    href: '/dic-queue/' + user.id,
+    href: '/disc-queue/' + user.id,
     count: '',
     current: false
   }, {
     name: 'Disc profile',
-    href: '/dic-profile/' + user.id,
+    href: '/disc-profile/' + user.id,
+    count: '',
+    current: false
+  }, {
+    name: 'Conversation',
+    href: '/conversation/' + user.id,
     count: '',
     current: false
   }];
@@ -76530,6 +76647,8 @@ var map = {
 	"./DiscQueue.js": "./resources/js/Pages/DiscQueue.js",
 	"./LifeStyle": "./resources/js/Pages/LifeStyle.js",
 	"./LifeStyle.js": "./resources/js/Pages/LifeStyle.js",
+	"./Likes": "./resources/js/Pages/Likes.js",
+	"./Likes.js": "./resources/js/Pages/Likes.js",
 	"./PerfectNatchQA": "./resources/js/Pages/PerfectNatchQA.js",
 	"./PerfectNatchQA.js": "./resources/js/Pages/PerfectNatchQA.js",
 	"./UserDetail": "./resources/js/Pages/UserDetail.js",
