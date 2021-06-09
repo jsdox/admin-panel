@@ -1,0 +1,88 @@
+version: "3"
+services:
+  breeze:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILD: local
+        PORT: 80
+    ports:
+      - 8086:80
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql
+      - pg
+      - mysql_tdd
+    environment:
+      APP_DEBUG: 'true'
+      APP_ENV: 'local'
+      APP_KEY: base64:gBc4PIN9WwpNpX7h1/d2F9i8EBrP8E/lBMeQKyjIebo=
+      APP_URL: https://202.115.1.1
+      BUILD: local
+      DB_CONNECTION: mysql
+      DATABASE_URL: mysql://user:password@mysql/breeze
+      DATABASE_URL_TDD: mysql://user:password@mysql_tdd/breeze
+      QUEUE_CONNECTION: database
+      TELESCOPE_URL: mysql://user:password@mysql/breeze
+      DB2_CONNECTION: secondary
+      DATABASE2_URL: postgres://postgres:docker@pg/secondary
+    networks:
+      breeze_web:
+        ipv4_address: 202.115.1.1
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - 9907:3306
+    volumes:
+      - breeze_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: breeze
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    networks:
+      breeze_web:
+        ipv4_address: 202.115.1.2
+
+  mysql_tdd:
+    image: mysql:latest
+    ports:
+      - 9917:3306
+    volumes:
+      - breeze_data_tdd:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: breeze
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    networks:
+      breeze_web:
+        ipv4_address: 202.115.1.3
+
+  pg:
+    image: postgres:latest
+    ports:
+      - 5433:5432
+    volumes:
+      - tacenda_data:/var/lib/postgres
+      - ./db-dev:/var/lib/postgres/db-dev
+    environment:
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: secondary
+    networks:
+      breeze_web:
+        ipv4_address: 202.115.1.4
+
+volumes:
+  breeze_data: { }
+  breeze_data_tdd: { }
+  tacenda_data: { }
+networks:
+  breeze_web:
+    ipam:
+      driver: default
+      config:
+        - subnet: 202.115.0.0/16
