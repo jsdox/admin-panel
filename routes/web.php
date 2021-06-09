@@ -39,7 +39,9 @@ Route::get('/perfect-match/{id}', [UserAnswerController::class, 'getAnswers'])->
 Route::get('/about/{id}', [AboutAnswersController::class, 'get'])->middleware(['auth', 'verified'])->name('get-about-qa');
 Route::get('/bio/{id}', [BioAnswersController::class, 'get'])->middleware(['auth', 'verified'])->name('get-about-qa');
 Route::get('/life-style/{id}', [LifestyleAnswersController::class, 'get'])->middleware(['auth', 'verified'])->name('get-lifestyle-qa');
-Route::get('/dic-queue/{id}', [DiscoveryQueuesController::class, 'get'])->middleware(['auth', 'verified'])->name('get-disc-queue');
-Route::get('/dic-profile/{id}', [DiscoveryProfilesController::class, 'get'])->middleware(['auth', 'verified'])->name('get-disc-profile');
+Route::get('/disc-queue/{id}', [DiscoveryQueuesController::class, 'get'])->middleware(['auth', 'verified'])->name('get-disc-queue');
+Route::get('/disc-profile/{id}', [DiscoveryProfilesController::class, 'get'])->middleware(['auth', 'verified'])->name('get-disc-profile');
+Route::get('/dics-liked/{id}', [LikesController::class, 'get'])->middleware(['auth', 'verified'])->name('get-disc-liked');
+
 
 require __DIR__.'/auth.php';
