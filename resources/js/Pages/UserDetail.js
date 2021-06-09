@@ -32,8 +32,10 @@ export default function UserDetail(props) {
         { name: 'About Q/A', href: '/about/' + user.id, current: false },
         { name: 'Bio Q/A', href: '/bio/' + user.id, current: false },
         { name: 'Life style Q/A', href: '/life-style/' + user.id, current: false },
-        { name: 'Disc queue', href: '/dic-queue/' + user.id, count: '', current: false },
-        { name: 'Disc profile', href: '/dic-profile/' + user.id, count: '', current: false },
+        { name: 'Liked on Discovery', href: '/dics-liked/' + user.id, count: '', current: false },
+        { name: 'Disc queue', href: '/disc-queue/' + user.id, count: '', current: false },
+        { name: 'Disc profile', href: '/disc-profile/' + user.id, count: '', current: false },
+        { name: 'Conversation', href: '/conversation/' + user.id, count: '', current: false },
       ];
     return (
         <Sidebar>
