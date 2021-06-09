@@ -1983,6 +1983,16 @@ class Builder
             throw new InvalidArgumentException('Order direction must be "asc" or "desc".');
         }
 
+        if (is_array($this->{$this->unions ? 'unionOrders' : 'orders'})) {
+            foreach ($this->{$this->unions ? 'unionOrders' : 'orders'} as $key => $value) {
+                if (isset($value['column']) && $value['column'] === $column) {
+                    $this->{$this->unions ? 'unionOrders' : 'orders'}[$key]['direction'] = $direction;
+
+                    return $this;
+                }
+            }
+        }
+
         $this->{$this->unions ? 'unionOrders' : 'orders'}[] = [
             'column' => $column,
             'direction' => $direction,
@@ -2826,8 +2836,8 @@ class Builder
      */
     public function aggregate($function, $columns = ['*'])
     {
-        $results = $this->cloneWithout($this->unions ? [] : ['columns'])
-                        ->cloneWithoutBindings($this->unions ? [] : ['select'])
+        $results = $this->cloneWithout($this->unions || $this->havings ? [] : ['columns'])
+                        ->cloneWithoutBindings($this->unions || $this->havings ? [] : ['select'])
                         ->setAggregate($function, $columns)
                         ->get($columns);
 
