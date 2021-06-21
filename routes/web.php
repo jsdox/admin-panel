@@ -47,4 +47,4 @@ Route::get('/dics-liked/{id}', [LikesController::class, 'get'])->middleware(['au
 Route::get('/conversation/{id}', [SlotsController::class, 'get'])->middleware(['auth', 'verified'])->name('converstation');
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
